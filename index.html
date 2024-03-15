@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+
+    <title>Employe Detials</title>
+
+</head>
+
+<body>
+    <div class="body-container">
+        <div class="main d-flex ">
+            <div class="side_menu">
+                <div class="head pt-4">
+                    <h4 class=""> Employee</h4>
+                    <p class="mb-3">Management</p>
+                </div>
+                <div class="nav_menu mt-4">
+                    <ul>
+                        <li><a href=""><i class="fa-solid fa-house"></i>Dashboard</a></li>
+                        <li><a href=""><i class="fa-solid fa-chart-simple"></i>Employee</a></li>
+                        <li><a href=""><i class="fa-solid fa-user"></i>Profile</a></li>
+                        <li><a href=""><i class="fa-solid fa-lock"></i>Logout</a></li>
+                    </ul>
+                </div>
+                <div class="footer mb-3">
+                    <p>Powered By</p>
+                    <img src="image/image 1.png" alt="">
+                </div>
+            </div>
+            <div class="clientside_sectn">
+                <div class="header d-flex ">
+                    <div class="head-portion mt-3 p-3">
+                        <p class="ps-0">Dashboard/Employees</p>
+                        <h4>Employees</h4>
+                    </div>
+                    <div class="search_bar d-flex justify-content-between p-3">
+
+                        <div class=" search mb-2 ">
+                            <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            <input class="search-function form-control ps-4 " type="search" 
+                                id="searchInput" placeholder="Search" aria-label="Search">
+                        </div>
+                        <span class="icon"><i class="fa-regular fa-bell"></i></span>
+                        <img  src="image/Avatar Style 6.png" alt="">
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="title d-flex justify-content-between mb-4">
+                        <div class="empolyee-list d-flex gap-3 align-items-center">
+                            <h4 class="ms-2">Employee List</h4>
+                            <select class="form-select selct" aria-label="select example" id="floatingselect">
+
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                
+                                <option value="5" selected>5</option>
+                            </select>
+                            <span id="totalemployeee"> of 10</span>
+                        </div>
+                        <div class="add-btn">
+                            <button type="button" class="btn add btn-primary rounded-4" onclick="formopen()">Add
+                                Employee</button>
+                        </div>
+                    </div>
+                    <table class="table" id="table">
+
+                        <thead class="table-heading">
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name<i class="fa-solid fa-angle-down"></i></th>
+                                <th scope="col">Email<i class="fa-solid fa-angle-down"></i></th>
+                                <th scope="col">Phone<i class="fa-solid fa-angle-down"></i></th>
+                                <th scope="col">Gender<i class="fa-solid fa-angle-down"></i></th>
+                                <th scope="col">DOB<i class="fa-solid fa-angle-down"></i></th>
+                                <th scope="col">COUNTRY<i class="fa-solid fa-angle-down"></i></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-body" id="user-detial-body">
+                            <!-- <tr>
+                                <th scope="row"># 01</th>
+                                <td><img src="image/Rectangle 346.png" alt="">Mr. Michael Johnson</td>
+                                <td>michaeljohnson@example.com</td>
+                                <td>5551234567</td>
+                                <td>Male</td>
+                                <td>10 December 1985</td>
+                                <td>USA</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#"><i class="fa-regular fa-eye"></i> View
+                                                    Details</a></li>
+                                            <li><a class="dropdown-item" href="#" onclick="editformopen()"><i class="fa-solid fa-pencil"></i>
+                                                    Edit</a></li>
+                                            <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i>
+                                                    Delete</a></li>
+                                        </ul>
+                                    </div>
+
+                                </td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="side-pagination">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination d-flex gap-2" id="pagination">
+
+                        </ul>
+                    </nav>
+                </div>
+                <div class="footer-end ">
+                    <div class="copy-right">
+                        <h5>© 2023 All Rights Reserved. Stackup</h5>
+                    </div>
+                    <div class="link">
+                        <a href="#">Term Of Use</a>
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- success -->
+
+
+
+      <!-- next pageeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
+
+        <div class="add-employee" id="employeeform">
+
+            <div class="section card  edit_card rounded-4  px-3 ">
+                <header class="header">
+                    <h4 class=" head ps-2 pt-4 pb-2">Add Employeee</h4>
+                    <div class="form-close d-flex justify-content-end">
+                        <button class="close-btn" onclick="formclose()"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </header>
+
+
+                <div class="upload text-center my-2 py-3 rounded-3 bg-light mb-4">
+                    <label for="exampleInputfile">
+                        <i class="fa-solid fa-upload"></i>
+
+                        <h6>Upload Image</h6>
+
+                        <input type="file" class="form-control rounded-4 file" id="exampleInputfile" name="avatar"
+                            onchange="addImg()">
+                        <img src="" id="imginfo" alt="">
+                        <p>png/jpg files are allowed</p>
+                    </label>
+
+                </div>
+                <form action="" id="postForm" onsubmit="validateForm()">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4 ">
+                            <label class="form-label mb-3" for="salutation">salutation</label>
+                            <select class="form-control  form-select mb-3" id="salutation">
+                                <option value="">select</option>
+                                <option value="mr">MR</option>
+                                <option value="mrs">MRS</option>
+                                <option value="kumari">DR</option>
+                            </select>
+                            <div class="errorMsg"></div>
+                        </div>
+                        <div class="col-md-4 col-lg-4 mb-3">
+                            <label for="firstName" class="form-label mb-3">First Name</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="john">
+                            <div class="errorMsg"></div>
+                        </div>
+                        <div class="col-md-4 col-lg-4 mb-3 ">
+                            <label for="lastName" class="form-label mb-3">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" placeholder="Doe">
+                            <div class="errorMsg"></div>
+                        </div>
+
+                    </div>
+                    <div class="row ">
+                        <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control rounded-4" id="email"
+                                placeholder="sample@gmail.com">
+                            <div class="errorMsg"></div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                            <label for="phone" class="form-label">Mobile Number</label>
+                            <input type="text" class="form-control rounded-4" id="phone"
+                                placeholder="Enter your Number">
+                            <div class="errorMsg"></div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="dob" class="form-label ">Date of Birth</label>
+                            <input type="date" class="form-control rounded-4 dob" id="dob"
+                                placeholder="Select your Birth">
+                            <div class="errorMsg"></div>
+                        </div>
+                        <div class="col-lg-6 col-md-12   ">
+                            <label for="gender" class="form-label mb-4">Gender</label>
+                            <div class="d-flex gap-4 ">
+                                <div class="form-check mb-3 ">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="maleradio"
+                                        value="Male">
+                                    <label class="form-check-label" for="maleradio">Male</label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="femradio"
+                                        value="Female">
+                                    <label class="form-check-label" for="femradio">Female</label>
+                                </div>
+                            </div>
+                            <div class="errorMsg"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <label for="qulafi" class="form-label">qualification</label>
+                            <input type="text" class="form-control d rounded-4" id="qulafi" placeholder="enter qualification">
+                            <div class="errorMsg"></div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control d rounded-4" id="password" placeholder="">
+                            <div class="errorMsg"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <label for="address" class="form-label">address</label>
+                            <input type="text" class="form-control d rounded-4" id="address"
+                                placeholder="enter address">
+                            <div class="errorMsg"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <label class="form-label " for="country">Country</label>
+                            <select class="form-control form-select" id="country">
+                                <option >select</option>
+                                <option value="india">INDIA</option>
+                                <option value="china">CHINA</option>
+                                <option value="pakisthan">PAKISTHAN</option>
+                            </select>
+                            <div class="errorMsg"></div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label class="form-label " for="state">State</label>
+                            <select class="form-control form-select" id="state">
+                                <option  >select</option>
+                                <option value="kerala">KERALA</option>
+                                <option>IL</option>
+                                <option>TX</option>
+                            </select>
+                            <div class="errorMsg"></div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 mb-4">
+                        <div class="col-lg-6 mb-3">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="city" placeholder="Enter City">
+                            <div class="errorMsg"></div>
+                        </div>
+                        <div class="col-lg-6 ">
+                            <label for="pin/zip" class="form-label">Pin/Zip</label>
+                            <input type="text" class="form-control" id="pin/zip" placeholder="Enter zip/pin">
+                            <div class="errorMsg"></div>
+                        </div>
+                    </div>
+                    <div class="add-btn mb-3">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button class="btn btn-light me-md-2" type="button" onclick="formclose()">Cancel</button>
+                            <button class="btn btn-primary" type="button" id="submitButton">Add Employee</button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <!-- edit employeeeee pageeeeeeeeeeeeeeeeeeeeeeeeeeee -->
+
+        <div class="edit-employee" id="editemployeeform">
+
+            <div class="section card rounded-4  px-3 ">
+                <header class="header">
+                    <h4 class=" head ps-2 pt-4 pb-2">Edit Employeee</h4>
+                    <div class="form-close d-flex justify-content-end">
+                        <button class="close-btn" onclick="editformclose()"><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                </header>
+
+                <div class="upload-page d-flex gap-3">
+                    <div class="upload-sectn text-center my-2 py-3 rounded-3 bg-light mb-4">
+                        <div class="upload-img">
+                            <input type="file" id="exampleInputfile" class="file" name="avatar">
+                            <img src="" alt="" id="changeImg"  width="100px"  height="100px">
+
+                        </div>
+
+                    </div>
+
+                    <label for="exampleInputfile" type="button" class="upload-btn btn-light mt-5">Change</label>
+
+                </div>
+
+                <form id="formedit">
+                    <div class="row">
+                        <div class="col-md-4 col-lg-4 ">
+                            <label class="form-label mb-3" for="edit-salutation">salutation</label>
+                            <select class="form-control form-select mb-3 " id="edit-salutation">
+                                <option selected>select</option>
+                                <option value="mr">MR</option>
+                                <option value="mrs">MRS</option>
+                                <option value="kumari">DR</option>
+                            </select>
+                            <div class="editerrormsg" ></div>
+                        </div>
+                        <div class="col-md-4 col-lg-4 mb-3">
+                            <label for="edit-FirstName" class="form-label mb-3">First Name</label>
+                            <input type="text" class="form-control" id="edit-FirstName" placeholder="john">
+                            <div class="editerrormsg"></div>
+                        </div>
+                        
+                        <div class="col-md-4 col-lg-4 mb-3 ">
+                            <label for="edit-lastName" class="form-label mb-3">Last Name</label>
+                            <input type="text" class="form-control" id="edit-lastName" placeholder="Doe">
+                            <div class="editerrormsg"></div>
+                        </div>
+                       
+                    </div>
+                    <div class="row ">
+                        <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                            <label for="edit-email" class="form-label">Email address</label>
+                            <input type="email" class="form-control rounded-4" id="edit-email"
+                                placeholder="sample@gmail.com">
+                                <div class="editerrormsg"></div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 mb-3">
+                            <label for="edit-phone" class="form-label">Mobile Number</label>
+                            <input type="number" class="form-control rounded-4" id="edit-phone"
+                                placeholder="Enter your Number">
+                                <div class="editerrormsg"></div>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-lg-6 col-md-12 mb-3">
+                            <label for="edit-dob" class="form-label ">Date of Birth</label>
+                            <input type="date" class="form-control rounded-4 dob" id="edit-dob"
+                                placeholder="Select your Birth">
+                                <div class="editerrormsg"></div>
+                        </div>
+                        <div class="col-lg-6 col-md-12   ">
+                            <label for="radio" class="form-label mb-4">Gender</label>
+                            <div class="d-flex gap-4 ">
+                                <div class="form-check mb-3 ">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="edit-maleradio" value="Male">
+                                    <label class="form-check-label" for="edit-maleradio">Male</label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                        id="edit-femradio" value="Female">
+                                    <label class="form-check-label" for="edit-femradio">Female</label>
+                                </div>
+                            </div>
+                            <div class="editerrormsg"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <label for="edit-qualifications" class="form-label">qualification</label>
+                            <input type="text" class="form-control d rounded-4" id="edit-qualifications"
+                                placeholder="qualification">
+                                <div class="editerrormsg"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 mb-3">
+                            <label for="edit-address" class="form-label">address</label>
+                            <input type="text" class="form-control d rounded-4" id="edit-address"
+                                placeholder="enter address">
+                                <div class="editerrormsg"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 mb-3">
+                            <label class="form-label " for="edit-country">Country</label>
+                            <select class="form-control form-select " id="edit-country">
+                                <option >select</option>
+                                <option>INDIA</option>
+                                <option>CHINA</option>
+                                <option>USA</option>
+                                <option>PAKISTHAN</option>
+                            </select>
+                            <div class="editerrormsg"></div>
+                        </div>
+                        <div class="col-lg-6 mb-3">
+                            <label class="form-label " for="edit-state">State</label>
+                            <select class="form-control form-select" id="edit-state">
+                                <option >select</option>
+                                <option>KERALA</option>
+                                <option>IL</option>
+                                <option>TX</option>
+                            </select>
+                            <div class="editerrormsg"></div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 mb-4">
+                        <div class="col-lg-6 mb-3">
+                            <label for="edit-city" class="form-label">City</label>
+                            <input type="text" class="form-control" id="edit-city" placeholder="Enter City">
+                            <div class="editerrormsg"></div>
+                        </div>
+                        <div class="col-lg-6 ">
+                            <label for="edit-pinzip" class="form-label">Pin/Zip</label>
+                            <input type="text" class="form-control" id="edit-pinzip" placeholder="Enter zip/pin">
+                            <div class="editerrormsg"></div>
+                        </div>
+                    </div>
+                    <div class="add-btn">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <button class="btn btn-light me-md-2" type="button"
+                                onclick="editformclose()">Cancel</button>
+                            <button class="btn btn-primary" type="button" id="savebtn" >Save Changes</button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- deleteeee psgeeeeeeeeeee -->
+
+        <div class="delete-data card rounded-4" id="deleteForm">
+            <div class="delete">
+                <h3 class="mt-4 ms-3">Delete Employee</h3>
+                <button class="close-btn delete-close-btn" onclick="deleteFormclose()"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="para mt-3">
+                <p>Are you sure you want to delete this employee?</p>
+            </div>
+
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-3 ">
+                <button class="btn btn-light me-md-2 me-3" type="button" onclick="deleteFormclose()">Cancel</button>
+                <button class="delete-btn btn-primary me-3 " id="conformDelete" type="click">Delete</a></button>
+            </div>
+        </div>
+
+
+        <!-- viewww detialsss pageeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee -->
+
+
+
+
+
+    </div>
+    <div id="overlay"></div>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
